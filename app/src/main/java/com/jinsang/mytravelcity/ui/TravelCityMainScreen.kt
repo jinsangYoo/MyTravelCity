@@ -48,7 +48,7 @@ import com.jinsang.mytravelcity.ui.utils.TravelCityNavigationType
 fun TravelCityMainScreen(
     navigationType: TravelCityNavigationType,
     contentType: TravelCityContentType,
-    trableCityUiState: TravelCityUiState,
+    travelCityUiState: TravelCityUiState,
     onTabPressed: (StoreCategoryType) -> Unit,
     onStorePressed: (Store) -> Unit,
     onDetailScreenBackPressed: () -> Unit,
@@ -90,7 +90,7 @@ fun TravelCityMainScreen(
                     Modifier.width(dimensionResource(id = R.dimen.drawer_width))
                 ) {
                     NavigationDrawerContent(
-                        selectedDestination = trableCityUiState.currentStoreCategory,
+                        selectedDestination = travelCityUiState.currentStoreCategory,
                         onTabPressed = onTabPressed,
                         navigationItemContentList = navigationItemContentList
                     )
@@ -98,14 +98,35 @@ fun TravelCityMainScreen(
             },
             modifier = Modifier.testTag(navigationDrawerContentDescription)
         ) {
-
+            MyTravelCityAppContent(
+                navigationType = navigationType,
+                contentType = contentType,
+                trableCityUiState = travelCityUiState,
+                onTabPressed = onTabPressed,
+                onStorePressed = onStorePressed,
+                navigationItemContentList = navigationItemContentList,
+                modifier = modifier
+            )
         }
     } else {
-        if (trableCityUiState.isShowingList) {
-
+        if (travelCityUiState.isShowingList) {
+            MyTravelCityAppContent(
+                navigationType = navigationType,
+                contentType = contentType,
+                trableCityUiState = travelCityUiState,
+                onTabPressed = onTabPressed,
+                onStorePressed = onStorePressed,
+                navigationItemContentList = navigationItemContentList,
+                modifier = modifier
+            )
         }
         else {
-
+            StoreDetailsScreen(
+                travelCityUiState = travelCityUiState,
+                onBackPressed = onDetailScreenBackPressed,
+                modifier = modifier,
+                isFullScreen = true
+            )
         }
     }
 }

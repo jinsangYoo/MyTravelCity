@@ -42,7 +42,7 @@ fun MyTravelCityApp(
     TravelCityMainScreen(
         navigationType = navigationType,
         contentType = contentType,
-        trableCityUiState = travelCityUiState,
+        travelCityUiState = travelCityUiState,
         onTabPressed = {
             viewModel.updateCurrentStoreCategory(it)
             viewModel.resetHomeScreenStates()

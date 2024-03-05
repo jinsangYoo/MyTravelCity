@@ -2,6 +2,7 @@ package com.jinsang.mytravelcity.ui.common
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -9,9 +10,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -60,7 +62,6 @@ fun StoreListOnlyContent(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TravelCityStoreListItem(
     store: Store,
@@ -137,4 +138,38 @@ fun TravelCityLogo(
         colorFilter = ColorFilter.tint(color),
         modifier = modifier
     )
+}
+
+@Composable
+fun ActionButton(
+    text: String,
+    onButtonClicked: (String) -> Unit,
+    modifier: Modifier = Modifier,
+    containIrreversibleAction: Boolean = false,
+) {
+    Box(modifier = modifier) {
+        Button(
+            onClick = { onButtonClicked(text) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = dimensionResource(R.dimen.detail_action_button_padding_vertical)),
+            colors = ButtonDefaults.buttonColors(
+                containerColor =
+                if (containIrreversibleAction) {
+                    MaterialTheme.colorScheme.onErrorContainer
+                } else {
+                    MaterialTheme.colorScheme.primaryContainer
+                }
+            )
+        ) {
+            Text(
+                text = text,
+                color = if (containIrreversibleAction) {
+                    MaterialTheme.colorScheme.onError
+                } else {
+                    MaterialTheme.colorScheme.onSurfaceVariant
+                }
+            )
+        }
+    }
 }

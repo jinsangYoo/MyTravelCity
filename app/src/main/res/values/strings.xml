@@ -10,6 +10,8 @@
     <string name="navigation_bottom">Navigation Bottom</string>
     <string name="navigation_back">Back</string>
 
+    <string name="details_screen">Details Screen</string>
+
     <string name="tab_food">음식</string>
     <string name="tab_park">공원</string>
     <string name="tab_shopping">쇼핑</string>
