@@ -1,6 +1,5 @@
 package com.jinsang.mytravelcity.ui
 
-import androidx.annotation.DrawableRes
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

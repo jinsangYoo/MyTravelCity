@@ -12,13 +12,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -35,7 +32,6 @@ import androidx.compose.ui.res.stringResource
 import com.jinsang.mytravelcity.R
 import com.jinsang.mytravelcity.data.Store
 import com.jinsang.mytravelcity.data.StoreCategoryType
-import com.jinsang.mytravelcity.ui.common.ActionButton
 
 @Composable
 fun StoreDetailsScreen(
@@ -189,8 +185,7 @@ private fun StoreDetailsScreenTopBar(
                 .padding(end = dimensionResource(R.dimen.detail_subject_padding_end))
         ) {
             Text(
-                text = travelCityUiState.currentSelectedStore.description ?: stringResource(R
-                    .string.empty_description),
+                text = travelCityUiState.currentSelectedStore.name,
                 style = MaterialTheme.typography.titleMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
