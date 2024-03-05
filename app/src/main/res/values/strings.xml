@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">MyTravelCity</string>
+    <string name="logo">TravelCity</string>
+
+    <string name="empty_name">Empty name</string>
+    <string name="empty_description">Empty description</string>
+
+    <string name="navigation_drawer">Navigation Drawer</string>
+    <string name="navigation_rail">Navigation Rail</string>
+    <string name="navigation_bottom">Navigation Bottom</string>
+    <string name="navigation_back">Back</string>
+
+    <string name="tab_food">음식</string>
+    <string name="tab_park">공원</string>
+    <string name="tab_shopping">쇼핑</string>
+    <string name="tab_for_child">아동 친화적</string>
+    <string name="tab_coffeeshop">까페</string>
 </resources>
